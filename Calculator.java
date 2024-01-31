@@ -50,7 +50,8 @@ public class Calculator {
 
 
 
-
+                }
+                
                 }
         }
         input.close();
