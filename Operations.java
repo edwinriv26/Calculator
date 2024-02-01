@@ -30,7 +30,24 @@ public class Operations {
                     }
                     result /= nextNumber;
                     break;
-                
+                case "power":
+                    result = Math.pow(result, nextNumber);
+                    break;
+                case "root":
+                    if (nextNumber == 0) {
+                        throw new ArithmeticException("Root cannot be zero");
+                    }
+                    result = Math.pow(result, 1.0 / nextNumber);
+                    break;
+                case "percent":
+                    result *= (nextNumber / 100);
+                    break;
+                case "fraction": // Assuming similar to divide
+                    if (nextNumber == 0) {
+                        throw new ArithmeticException("Cannot divide by zero");
+                    }
+                    result /= nextNumber;
+                    break;
                 default:
                     throw new IllegalArgumentException("Invalid operation: " + operation);
             }
@@ -40,6 +57,4 @@ public class Operations {
 
         return result;
     }
-
-    
 }
